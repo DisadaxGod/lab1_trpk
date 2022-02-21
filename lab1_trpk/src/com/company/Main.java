@@ -5,16 +5,20 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        DetectorData deatherData = new DetectorData();
+        DetectorData detectorData = new DetectorData();
         String mes = "нет";
         Scanner in = new Scanner(System.in);
         while (mes.equals("нет")){
             TimeUnit.SECONDS.sleep(3);
-            System.out.print("У нас пожар?");
+            System.out.print("У нас пожар?\n");
             mes = in.nextLine();
         }
-        Message message =
-                new Message(deatherData);
-        deatherData.setMeasurements("пожар");
+        Firefighters firefighters =
+                new Firefighters(detectorData);
+        Owners owners =
+                new Owners(detectorData);
+        AFESystem afeSystem =
+                new AFESystem(detectorData);
+        detectorData.setMeasurements("пожар");
     }
 }

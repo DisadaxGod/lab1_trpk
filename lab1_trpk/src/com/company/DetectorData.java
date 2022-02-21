@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class DetectorData implements Subject {
     private ArrayList<Observer> observers;
-    //private ArrayList observers;
     private String mes;
 
     public DetectorData() {
